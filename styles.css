@@ -42,7 +42,7 @@ body::before {
 /* Ocultar scrollbar en html y body */
 
 /* Firefox */
-html, body {
+html, body, .modal-content {
     scrollbar-width: none;
     -ms-overflow-style: none; /* IE y Edge Legacy */
     overflow-y: scroll; /* para mantener scroll funcional */
@@ -50,7 +50,8 @@ html, body {
 
 /* Chrome, Safari, Opera, Edge, Brave (Chromium) */
 html::-webkit-scrollbar,
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar{
     width: 0 !important;
     height: 0 !important;
     background: transparent !important;
@@ -153,10 +154,11 @@ h1 {
 }
 
 .card-header {
-    padding: 1.5rem;
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* Asegura que el contenido comience alineado a la izquierda */
     gap: 1rem;
+    padding: 1.5rem;
     background: rgba(30, 41, 59, 0.7);
 }
 
@@ -168,8 +170,10 @@ h1 {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
+    flex-shrink: 0; /* Evita que el icono se deforme o reduzca */
 }
 
+/* Específicos para cada tarjeta */
 .card-1 .card-icon { background: rgba(14, 165, 233, 0.15); }
 .card-2 .card-icon { background: rgba(139, 92, 246, 0.15); }
 .card-3 .card-icon { background: rgba(16, 185, 129, 0.15); }
@@ -225,7 +229,7 @@ h1 {
     padding: 0.5rem;
     text-align: center;
     transition: var(--transition);
-    width: 80px;
+    width: 100%;
     height: 80px;
     display: flex;
     flex-direction: column;
@@ -264,19 +268,23 @@ h1 {
     z-index: 1000;
     align-items: center;
     justify-content: center;
+    overflow: auto; /* Allow scrolling if modal content is too tall */
 }
 
 .modal-content {
     background: var(--card-bg);
     border-radius: 16px;
     padding: 2rem;
-    max-width: 600px;
-    width: 90%;
+    max-width: min(90vw, 600px); /* Scale with viewport, cap at 600px */
+    width: 100%; /* Full width within max-width constraint */
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid var(--card-border);
     animation: fadeIn 0.3s ease;
     background: linear-gradient(145deg, var(--card-bg), rgba(30, 41, 59, 0.9));
+    overflow-y: auto; /* Enable vertical scrolling if content is too tall */
+    max-height: 90vh; /* Limit height to 90% of viewport height */
+    box-sizing: border-box; /* Ensure padding is included in width/height */
 }
 
 .modal-header {
@@ -336,8 +344,20 @@ h1 {
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.3s ease;
-}
 
+}
+.modal-closeX {
+    position: absolute; /* Changed from absolute to fixed */
+    top: 1.2rem;
+    right: 2.2rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1001; /* Ensure it’s above modal content */
+}
 .modal-close:hover {
     color: var(--accent-blue);
 }
@@ -491,7 +511,188 @@ footer {
     to { opacity: 1; transform: scale(1); }
 }
 
+footer {
+    background: linear-gradient(135deg, var(--dark-bg), rgba(30, 41, 59, 0.8));
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    color: var(--text-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 25%);
+    z-index: -1;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s forwards;
+}
+
+.footer-main {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-main h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--accent-blue), var(--accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.3rem;
+}
+
+.footer-main p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+.footer-contact {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer-contact a {
+    font-size: 0;
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    transition: var(--transition);
+}
+
+.footer-contact a:hover {
+    background: rgba(14, 165, 233, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.footer-contact i {
+    font-size: 1.3rem;
+}
+
+.footer-contact .fa-at {
+    color: #EA4335; /* Color oficial de Gmail */
+}
+
+.footer-contact .fa-linkedin {
+    color: #0A66C2; /* Color oficial de LinkedIn */
+}
+
+.footer-bottom {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 1rem;
+    opacity: 0.7;
+}
+.footer-contact .fa-microsoft {
+    position: relative;
+    color: transparent; /* Oculta el ícono original */
+    width: 20px;
+    height: 20px;
+}
+
+.footer-contact .fa-microsoft::before,
+.footer-contact .fa-microsoft::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    box-sizing: border-box;
+}
+
+.footer-contact .fa-microsoft::before {
+    top: 0;
+    left: 0;
+    background: #F25022; /* Rojo */
+    box-shadow:
+        11px 0 #FFB900,    /* Amarillo derecha arriba */
+        0 11px #7FBA00,     /* Verde abajo izquierda */
+        11px 11px #00A4EF;  /* Azul abajo derecha */
+    border-radius: 2px;
+}
+
+
 @media (max-width: 768px) {
+    footer {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-main {
+        text-align: center;
+    }
+
+    .footer-main h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-main p {
+        font-size: 0.85rem;
+    }
+
+    .footer-contact a {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-contact i {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 768px) {
+    .card-header {
+        justify-content: flex-start; /* Mantiene alineación a la izquierda en móviles */
+        padding: 1rem; /* Reduce ligeramente el padding en móviles */
+    }
+
+    .card-icon {
+        width: 40px; /* Tamaño ligeramente más pequeño para móviles */
+        height: 40px;
+        font-size: 1.2rem; /* Ajusta el tamaño del icono */
+    }
+    .modal-closeX {
+        position: fixed; /* Changed from absolute to fixed */
+        top: 2.7rem;
+        right: 2.2rem;
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        z-index: 1001; /* Ensure it’s above modal content */
+    }
+    
     .container {
         padding: 1.5rem;
     }
@@ -510,8 +711,9 @@ footer {
     
     .cards-container {
         grid-template-columns: 1fr;
+
     }
-    
+
     .flow-step {
         width: 100%;
     }
@@ -527,4 +729,5 @@ footer {
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
 }
