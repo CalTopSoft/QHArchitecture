@@ -1,0 +1,376 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura BasketLine Multijugador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-basketball"></i>
+            </div>
+            <h1>Quantum HoopSync Architecture</h1>
+            <p class="subtitle">Una arquitectura diseñada para juegos multijugador en tiempo real, con alta escalabilidad y rendimiento óptimo.</p>
+            <a href="https://caltopsoft.github.io/BasquetOnline/" target="_blank" class="game-button">Ir al Juego</a>
+        </header>
+        <div class="cards-container">
+            <div class="card card-1" data-card="frontend">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="card-title">Frontend</div>
+                </div>
+                <div class="card-content">
+                    <p>El frontend proporciona una interfaz de usuario dinámica y responsiva para una experiencia de juego inmersiva.</p>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #61DAFB;"><i class="fab fa-react"></i></div>
+                            <div class="tech-name">React v18</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #F7DF1E;"><i class="fab fa-js"></i></div>
+                            <div class="tech-name">JavaScript</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #E34F26;"><i class="fab fa-html5"></i></div>
+                            <div class="tech-name">HTML5</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #1572B6;"><i class="fab fa-css3-alt"></i></div>
+                            <div class="tech-name">CSS3</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #000000;"><i class="fas fa-paint-brush"></i></div>
+                            <div class="tech-name">p5.js</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #38B2AC;"><i class="fas fa-code"></i></div>
+                            <div class="tech-name">Babel</div>
+                        </div>
+                    </div>
+                    <br>
+                    <a href="#" class="details-link">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card card-2" data-card="backend">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="card-title">Backend</div>
+                </div>
+                <div class="card-content">
+                    <p>El backend gestiona la lógica del juego, la comunicación en tiempo real y el almacenamiento de datos.</p>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #339933;"><i class="fab fa-node-js"></i></div>
+                            <div class="tech-name">Node.js</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #0066CC;"><i class="fas fa-bolt"></i></div>
+                            <div class="tech-name">WebSocket</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #47A248;"><i class="fas fa-database"></i></div>
+                            <div class="tech-name">MongoDB</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #47A248;"><i class="fas fa-cloud"></i></div>
+                            <div class="tech-name">MongoDB Atlas</div>
+                        </div>
+                    </div>
+                    <br>
+                    <a href="#" class="details-link">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card card-3" data-card="infraestructura">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="card-title">Infraestructura</div>
+                </div>
+                <div class="card-content">
+                    <p>La infraestructura es la base que asegura el funcionamiento fluido, escalable y siempre disponible del juego.</p>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #2088FF;"><i class="fab fa-github"></i></div>
+                            <div class="tech-name">GitHub</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #00C7B7;"><i class="fas fa-server"></i></div>
+                            <div class="tech-name">Render</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #FF6B00;"><i class="fas fa-globe"></i></div>
+                            <div class="tech-name">GitHub Pages</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #47A248;"><i class="fas fa-cloud"></i></div>
+                            <div class="tech-name">MongoDB Atlas</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #0066CC;"><i class="fas fa-exchange-alt"></i></div>
+                            <div class="tech-name">WebSockets</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon" style="color: #FF6B00;"><i class="fas fa-code-branch"></i></div>
+                            <div class="tech-name">CI/CD</div>
+                        </div>
+                    </div>
+                    <br>
+                    <a href="#" class="details-link">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="architecture-section">
+            <h2 class="section-title">Flujo de la Quantum HoopSync</h2>
+            
+            <div class="flow">
+                <div class="flow-step">
+                    <h3><i class="fas fa-user"></i> Cliente (Jugador)</h3>
+                    <p>Los jugadores acceden al juego a través del navegador, con una interfaz desarrollada en React y p5.js que ofrece una experiencia visual y funcional de alta calidad.</p>
+                </div>
+                
+                <div class="flow-step">
+                    <h3><i class="fab fa-github"></i> GitHub</h3>
+                    <p>El código fuente se almacena en un repositorio de GitHub, permitiendo control de versiones y despliegues automáticos a través de Render.</p>
+                </div>
+                
+                <div class="flow-step">
+                    <h3><i class="fas fa-server"></i> Render (Servidor)</h3>
+                    <p>Render aloja el servidor Node.js, que gestiona la lógica del juego, las conexiones WebSocket y la comunicación entre jugadores.</p>
+                </div>
+                
+                <div class="flow-step">
+                    <h3><i class="fas fa-database"></i> MongoDB Atlas</h3>
+                    <p>MongoDB Atlas proporciona una base de datos en la nube para almacenar rankings y estadísticas, con acceso eficiente para el servidor.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-cloud">
+            <div class="tech-cloud-item" data-tech="react">
+                <i class="fab fa-react" style="color: #61DAFB;"></i> React
+            </div>
+            <div class="tech-cloud-item" data-tech="nodejs">
+                <i class="fab fa-node-js" style="color: #339933;"></i> Node.js
+            </div>
+            <div class="tech-cloud-item" data-tech="mongodb">
+                <i class="fas fa-database" style="color: #47A248;"></i> MongoDB
+            </div>
+            <div class="tech-cloud-item" data-tech="websockets">
+                <i class="fas fa-bolt" style="color: #0066CC;"></i> WebSockets
+            </div>
+            <div class="tech-cloud-item" data-tech="github">
+                <i class="fab fa-github" style="color: #2088FF;"></i> GitHub
+            </div>
+            <div class="tech-cloud-item" data-tech="render">
+                <i class="fas fa-server" style="color: #00C7B7;"></i> Render
+            </div>
+            <div class="tech-cloud-item" data-tech="javascript">
+                <i class="fab fa-js" style="color: #F7DF1E;"></i> JavaScript
+            </div>
+            <div class="tech-cloud-item" data-tech="babel">
+                <i class="fas fa-code" style="color: #38B2AC;"></i> Babel
+            </div>
+        </div>
+
+        <footer>
+            <p>BasketLine Multijugador v1.0 - Arquitectura de Alto Rendimiento</p>
+            <p>Desarrollado con tecnologías modernas para una experiencia de juego en línea optimizada.</p>
+        </footer>
+    </div>
+
+    <!-- Modal para los cards -->
+    <div class="modal" id="card-modal">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="card-modal-icon"></div>
+                <h3 id="card-modal-title"></h3>
+            </div>
+            <p id="card-modal-description"></p>
+            <ul id="card-modal-list"></ul>
+        </div>
+    </div>
+
+    <!-- Modal para el tech-cloud -->
+    <div class="modal" id="tech-modal">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <script>
+        // Modal para los cards
+        const cardModal = document.getElementById('card-modal');
+        const cardModalTitle = document.getElementById('card-modal-title');
+        const cardModalDescription = document.getElementById('card-modal-description');
+        const cardModalList = document.getElementById('card-modal-list');
+        const cardModalIcon = document.getElementById('card-modal-icon');
+
+        const cardDetails = {
+            frontend: {
+                title: 'Frontend',
+                description: 'El frontend de BasketLine Multijugador ofrece una interfaz de usuario dinámica y responsiva, utilizando tecnologías modernas para una experiencia de juego inmersiva.',
+                list: [
+                    'React v18 gestiona la interfaz dinámica, incluyendo pantallas de juego, chat y rankings con componentes reutilizables.',
+                    'p5.js renderiza el juego en tiempo real, proporcionando físicas de balón y animaciones fluidas.',
+                    'JavaScript y Babel garantizan compatibilidad entre navegadores y el uso de sintaxis moderna ES6+.',
+                    'HTML5 y CSS3 crean una interfaz visualmente atractiva con animaciones como líneas de cancha y efectos de multitud.',
+                    'WebSockets permiten comunicación en tiempo real con el servidor para un juego sincronizado.',
+                    'El diseño responsivo asegura compatibilidad con dispositivos móviles y de escritorio.'
+                ],
+                icon: '<i class="fas fa-desktop"></i>',
+                iconColor: 'var(--accent-blue)',
+                iconBackground: 'rgba(14, 165, 233, 0.15)'
+            },
+            backend: {
+                title: 'Backend',
+                description: 'El backend gestiona la lógica del juego, la comunicación en tiempo real y el almacenamiento de datos, garantizando una experiencia multijugador fluida.',
+                list: [
+                    'Node.js ejecuta el servidor, manejando actualizaciones del estado del juego y conexiones WebSocket.',
+                    'WebSocket, mediante la librería ws, permite comunicación bidireccional en tiempo real para el juego y el chat.',
+                    'MongoDB Atlas almacena rankings y estadísticas del juego, con acceso rápido y eficiente.',
+                    'El script server.js controla la mecánica del juego, incluyendo físicas del balón, puntuación y turnos.',
+                    'Mensajes WebSocket funcionan como una API REST para acciones como unirse a salas o enviar mensajes.',
+                    'La arquitectura escalable soporta múltiples salas de juego con estados independientes.'
+                ],
+                icon: '<i class="fas fa-server"></i>',
+                iconColor: 'var(--accent-purple)',
+                iconBackground: 'rgba(139, 92, 246, 0.15)'
+            },
+            infraestructura: {
+                title: 'Infraestructura',
+                description: 'La infraestructura es la base que asegura el funcionamiento fluido, escalable y siempre disponible del juego.',
+                list: [
+                    'Render aloja el servidor Node.js, con escalado automático y despliegues desde GitHub.',
+                    'GitHub gestiona el código fuente, permitiendo control de versiones y colaboración.',
+                    'MongoDB Atlas ofrece una base de datos en la nube para almacenar rankings con alta disponibilidad.',
+                    'WebSockets garantizan comunicación de baja latencia entre clientes y servidor.',
+                    'Pipelines CI/CD en Render automatizan los despliegues para actualizaciones rápidas.',
+                    'GitHub Pages sirve el frontend en entornos de prueba para validaciones previas al lanzamiento.'
+                ],
+                icon: '<i class="fas fa-network-wired"></i>',
+                iconColor: 'var(--accent-green)',
+                iconBackground: 'rgba(16, 185, 129, 0.15)'
+            }
+        };
+
+        document.querySelectorAll('.details-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const card = this.closest('.card').getAttribute('data-card');
+                const details = cardDetails[card];
+                cardModalTitle.textContent = details.title;
+                cardModalDescription.textContent = details.description;
+                cardModalList.innerHTML = details.list.map(item => 
+                    `<li>${item}</li>`).join('');
+                cardModalIcon.innerHTML = details.icon;
+                cardModalIcon.style.color = details.iconColor;
+                cardModalIcon.style.background = details.iconBackground;
+                cardModal.style.display = 'flex';
+            });
+        });
+
+        document.querySelectorAll('#card-modal .modal-close').forEach(close => {
+            close.addEventListener('click', () => {
+                cardModal.style.display = 'none';
+            });
+        });
+
+        cardModal.addEventListener('click', (e) => {
+            if (e.target === cardModal) {
+                cardModal.style.display = 'none';
+            }
+        });
+
+        // Modal para el tech-cloud
+        const techModal = document.getElementById('tech-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+
+        const techDetails = {
+            react: {
+                title: 'React v18',
+                description: 'React gestiona la interfaz de usuario del juego, con componentes dinámicos para el chat, las salas y el gameplay. Su renderizado eficiente garantiza un desempeño óptimo.'
+            },
+            nodejs: {
+                title: 'Node.js',
+                description: 'Node.js ejecuta el servidor, gestionando la lógica del juego, conexiones WebSocket y actualizaciones en tiempo real. Es rápido y escalable para entornos multijugador.'
+            },
+            mongodb: {
+                title: 'MongoDB',
+                description: 'MongoDB, a través de Atlas, almacena rankings y estadísticas del juego. Su diseño en la nube asegura disponibilidad y acceso rápido a los datos.'
+            },
+            websockets: {
+                title: 'WebSockets',
+                description: 'WebSockets habilitan la comunicación en tiempo real entre jugadores, para el juego y el chat, con conexiones directas y de baja latencia.'
+            },
+            github: {
+                title: 'GitHub',
+                description: 'GitHub almacena el código fuente, con control de versiones y conexión con Render para despliegues automáticos.'
+            },
+            render: {
+                title: 'Render',
+                description: 'Render aloja el servidor Node.js, con escalado automático y despliegues directos desde GitHub.'
+            },
+            javascript: {
+                title: 'JavaScript',
+                description: 'JavaScript es el núcleo del proyecto, gestionando la lógica del frontend y backend con alta eficiencia.'
+            },
+            babel: {
+                title: 'Babel',
+                description: 'Babel transforma el código JavaScript moderno para garantizar compatibilidad con todos los navegadores.'
+            }
+        };
+
+        document.querySelectorAll('.tech-cloud-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const techId = this.getAttribute('data-tech');
+                const details = techDetails[techId];
+                modalTitle.textContent = details.title;
+                modalDescription.textContent = details.description;
+                techModal.style.display = 'flex';
+            });
+        });
+
+        document.querySelectorAll('#tech-modal .modal-close').forEach(close => {
+            close.addEventListener('click', () => {
+                techModal.style.display = 'none';
+            });
+        });
+
+        techModal.addEventListener('click', (e) => {
+            if (e.target === techModal) {
+                techModal.style.display = 'none';
+            }
+        });
+
+        // Animaciones en scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.flow-step, .card');
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < window.innerHeight - elementVisible) {
+                    el.style.animationPlayState = 'running';
+                }
+            });
+        };
+
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
