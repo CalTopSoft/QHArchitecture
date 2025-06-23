@@ -184,15 +184,25 @@
         </div>
 
         <footer>
-            <p>BasketLine Multijugador v1.0 - Arquitectura de Alto Rendimiento</p>
-            <p>Desarrollado con tecnologías modernas para una experiencia de juego en línea optimizada.</p>
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3>BasketLine Multijugador v1.0</h3>
+                    <p>Arquitectura épica para un juego online de otro nivel.</p>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:byronvera113@gmail.com" aria-label="Enviar correo a Gmail"><i class="fas fa-at"></i></a>
+                    <a href="mailto:byron.verar@ug.edu.ec" aria-label="Enviar correo a Outlook"><i class="fab fa-microsoft"></i></a>
+                    <a href="https://www.linkedin.com/in/byron-vera-4b9aab34a/" target="_blank" aria-label="Visitar LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <p class="footer-bottom">© 2025 BasketLine. Creado por Fast X Studios.</p>
         </footer>
     </div>
-
+       
     <!-- Modal para los cards -->
     <div class="modal" id="card-modal">
         <div class="modal-content">
-            <button class="modal-close">×</button>
+            <button class="modal-closeX">×</button>
             <div class="modal-header">
                 <div class="modal-icon" id="card-modal-icon"></div>
                 <h3 id="card-modal-title"></h3>
@@ -283,7 +293,7 @@
             });
         });
 
-        document.querySelectorAll('#card-modal .modal-close').forEach(close => {
+        document.querySelectorAll('#card-modal .modal-close .modal-closeX').forEach(close => {
             close.addEventListener('click', () => {
                 cardModal.style.display = 'none';
             });
@@ -345,10 +355,14 @@
             });
         });
 
-        document.querySelectorAll('#tech-modal .modal-close').forEach(close => {
-            close.addEventListener('click', () => {
-                techModal.style.display = 'none';
-            });
+        // Botón de cierre para el modal de tarjetas
+        document.querySelector('#card-modal .modal-closeX').addEventListener('click', () => {
+            cardModal.style.display = 'none';
+        });
+
+        // Botón de cierre para el modal de tecnologías
+        document.querySelector('#tech-modal .modal-close').addEventListener('click', () => {
+            techModal.style.display = 'none';
         });
 
         techModal.addEventListener('click', (e) => {
